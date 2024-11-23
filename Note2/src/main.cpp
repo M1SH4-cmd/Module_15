@@ -3,24 +3,22 @@
 using namespace std;
 int main(){
     vector<int> vec = {1, 6, 3, 6, -12, 634, 200, 12, 5, 3};
-    vector<int> res(vec.size(), 0);
 
-    int min = vec[0];
-    for(int i = 0; i < vec.size(); i++){
-        if(vec[i] < min) min = vec[i];
-    }
-
-    for(int i = 0; i < vec.size() - 1; i++){
-        int maxfind = 0;
-
-        for(int j = 0; j < vec.size(); j++){
+    for(int i = vec.size() - 1; i >= 0; i--){
+        int maxfind = vec[0];
+        for(int j = 0; j <= i; j++){
             if(vec[j] > vec[maxfind]) maxfind = j;
         }
-        res[i] = vec[maxfind];
-        vec[maxfind] = min;
+
+        int temp = vec[i];
+        vec[i] = vec[maxfind];
+        vec[maxfind] = temp;
+
     }
 
-    for(int i = 0; i < res.size(); i++){
-        cout << res[i] << " ";
+    for(int i = 0; i < vec.size(); i++){
+        cout << vec[i] << " ";
     }
+
+    return 0;
 }

@@ -3,8 +3,8 @@
 using namespace std;
 
 int maxSubarrayIndexes(vector<int> arr) {
-    int i = 0, j = 0, iMax = 0, jMax = 0, sumMax = 0, sumTemp = 0;
-    for (; i < arr.size(); i++) {
+    int j = 0, iMax = 0, jMax = 0, sumMax = 0, sumTemp = 0;
+    for (int i = 0; i < arr.size(); i++) {
         sumTemp = arr[i];
         for (int j = i + 1; j < arr.size(); ++j) {
             sumTemp += arr[j];

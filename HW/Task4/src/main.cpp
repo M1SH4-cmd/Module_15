@@ -12,7 +12,7 @@ int main()
         if (vec[right] > -vec[left]) cout << vec[left--] << " ";
         else cout << vec[right++] << " ";
     }
-    while (left >= 0) cout << vec[left--] << " "; // выводим левый хвост
-    while (right < vec.size()) cout << vec[right++] << " "; // выводим правый хвост
+    while (left >= 0) cout << vec[left--] << " ";
+    while (right < vec.size()) cout << vec[right++] << " ";
     cout << endl;
 }
